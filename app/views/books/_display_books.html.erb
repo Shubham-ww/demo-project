@@ -1,0 +1,24 @@
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <td>Book name</td>
+        <td>Decription</td>
+        <td>Open</td>
+        <td>Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |b| %>
+      <tr>
+        <td><%= b.name %></td>
+        <td><%= b.description %></td>
+        <td><%= link_to "Open book", category_book_path(@category, b), class: "links" %></td>
+        <td><%= link_to "Delete book", category_book_path(@category, b), method: :delete, data: { confirm: "Are you sure?" }, class: "links" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br><br>

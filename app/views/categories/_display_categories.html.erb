@@ -1,0 +1,26 @@
+<% if @categories.length == 0 %>
+  <p>No categories found.</p>
+<% else %>
+<div>
+
+  <table>
+    <thead>
+      <tr>
+        <td>Category name</td>
+        <td>Open</td>
+        <td>Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each do |c| %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= link_to "Open category", category_books_path(c), class: "links" %></td>
+        <td><%= link_to "Delete category", category_path(c), method: :delete, data: { confirm: "Are you sure?" }, class: "links" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div><br><br>
+<% end %>

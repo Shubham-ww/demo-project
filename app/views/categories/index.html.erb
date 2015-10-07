@@ -1,0 +1,21 @@
+
+<div>
+  <h1 id="header">Welcome to BOX</h1>
+
+  <div class = "search_tag">
+  <%= form_for(:category , method: "get") do %>
+    <%= text_field_tag :search, nil, :placeholder => 'category name' %>
+    <%= submit_tag "Search", class: "nav_links" %>
+  <% end %>
+  </div>
+</div>
+
+<%= render "display_categories" %>
+
+<div class="nav_div">
+  <%= link_to "Create New Category", new_category_path, class: "nav_links" %>
+</div><br><br>
+
+<div class="nav_div">
+  <%= link_to "Logout",  destroy_user_session_path, method: :delete, class: "nav_links" %>
+</div><br><br>

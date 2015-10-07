@@ -1,0 +1,31 @@
+<div id="search_result">
+<div>
+  <h3 id = "header">List of books under <%= @category.name %> category: </h3>
+
+  <div class = "search_tag">
+  <%= form_for(:book , method: "get", remote: true) do %>
+    <%= text_field_tag :search, nil, :placeholder => 'book name' %>
+    <%= submit_tag "Search", class: "nav_links" %>
+  <% end %>
+  </div>
+</div>
+
+<% if @books.length == 0 %>
+  <p>No Books found.</p>
+<% else %>
+
+<%= render "display_books" %>
+
+<% end %>
+
+<div class="nav_div">
+  <%= link_to "Create New Book", new_category_book_path(@category), class: "nav_links" %>
+  <%= link_to "Back", categories_path, class: "nav_links" %>
+</div>
+<br><br>
+
+<div class="nav_div">
+  <%= link_to "Logout",  destroy_user_session_path, method: :delete, class: "nav_links" %>
+</div>
+<br><br>
+</div>

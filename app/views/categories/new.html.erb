@@ -1,0 +1,25 @@
+
+<h1 id="header">Create new Category</h1>
+
+<div>
+
+  <%= form_for @category do |f| %>
+
+    <table class="table_without_border">
+      <tr>
+        <td class="column_with_width_defined"><%= f.label "Category name" %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td class="column_with_width_defined"><%= f.submit "Submit", class: "nav_links" %></td>
+        <td><%= link_to "Back", categories_path, class: "nav_links" %></td>
+      </tr>
+    </table>
+
+  <% end %><br><br>
+
+  <% if @category.errors.any? %>
+    <p class="creation_error">Cannot create category with blank name or same name.</p>
+  <% end %>
+
+</div><br><br>

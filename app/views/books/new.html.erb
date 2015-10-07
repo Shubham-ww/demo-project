@@ -1,0 +1,29 @@
+
+<h1 id="header">Create new Book</h1>
+
+<div>
+
+  <%= form_for @book, url: {action: "create"} do |f| %>
+
+    <table class="table_without_border">
+      <tr>
+        <td class="column_with_width_defined"><%= f.label "Book name" %></td>
+        <td><%= f.text_field :name, required: true %></td>
+      </tr>
+      <tr>
+        <td class="column_with_width_defined"><%= f.label "Book description" %></td>
+        <td><%= f.text_field :description, required: true %></td>
+      </tr>
+      <tr>
+        <td class="column_with_width_defined"><%= f.submit "Submit", class: "nav_links" %></td>
+        <td><%= link_to "Back", category_books_path, class: "nav_links" %></td>
+      </tr>
+    </table>
+
+  <% end %><br>
+
+  <% if @book.errors.any? %>
+    <p class="creation_error">Cannot create book with blank name or same name.</p>
+  <% end %>
+
+</div><br>

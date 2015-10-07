@@ -1,0 +1,33 @@
+
+#banner {
+  height: 120px;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  background-color: #B2E6FF;
+}
+
+body {
+  margin: 0;
+}
+
+#logo_image {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+#footer {
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  background-color: #B2E6FF;
+}
+
+#footer p {
+  margin: 0;
+  color: #007ACC;
+}
+
+#article_body {
+  margin: 0 15px;
+}
